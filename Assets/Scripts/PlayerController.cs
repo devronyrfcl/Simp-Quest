@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -47,4 +47,69 @@ public class PlayerController : MonoBehaviour
     {
         return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1f, 0.1f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
+
+    /*void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(groundCheck.position, new Vector2(1f, 0.1f));
+
+    }
+    private void OnEnable()
+    {
+        var playerInput = GetComponent<PlayerInput>();
+        playerInput.actions["Move"].performed += Move;
+        playerInput.actions["Jump"].performed += Jump;
+    }
+
+    private void OnDisable()
+    {
+        var playerInput = GetComponent<PlayerInput>();
+        playerInput.actions["Move"].performed -= Move;
+        playerInput.actions["Jump"].performed -= Jump;
+    }
+
+    private void OnValidate()
+    {
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+        if (groundCheck == null)
+        {
+            groundCheck = transform.Find("GroundCheck");
+        }
+    }
+
+
+    private void Reset()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        groundCheck = transform.Find("GroundCheck");
+        if (groundCheck == null)
+        {
+            GameObject groundCheckObj = new GameObject("GroundCheck");
+            groundCheckObj.transform.SetParent(transform);
+            groundCheckObj.transform.localPosition = new Vector3(0, -0.5f, 0);
+            groundCheck = groundCheckObj.transform;
+        }
+    }
+
+    private void Awake()
+    {
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+        if (groundCheck == null)
+        {
+            groundCheck = transform.Find("GroundCheck");
+            if (groundCheck == null)
+            {
+                GameObject groundCheckObj = new GameObject("GroundCheck");
+                groundCheckObj.transform.SetParent(transform);
+                groundCheckObj.transform.localPosition = new Vector3(0, -0.5f, 0);
+                groundCheck = groundCheckObj.transform;
+            }
+        }
+    }*/
 }
